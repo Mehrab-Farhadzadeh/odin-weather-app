@@ -1,0 +1,21 @@
+body {
+   background-color: #1f1f1f;
+   color: #eee;
+   padding: 2rem;
+   text-align: center;
+   font-family: monospace;
+}
+
+input {
+   font: inherit;
+   padding: 2px 4px;
+}
+
+output {
+   margin-top: 1rem;
+   font-size: large;
+}
+
+img {
+   max-width: 100%;
+}
