@@ -10,9 +10,14 @@ async function getGif(searchTerm) {
    const API_KEY = "MYz5hujNezc7jKzm6F5zAX8N04cbGmcD";
    const BASE_URL = "https://api.giphy.com/v1/gifs/translate";
    const url = BASE_URL + "?api_key=" + API_KEY + "&s=" + searchTerm;
-   const response = await fetch(url);
-   const json = await response.json();
-   return json.data.images.original.url;
+   try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(response.status);
+      const json = await response.json();
+      return json.data.images.original.url;
+   } catch (e) {
+      (e) => addToDom();
+   }
 }
 
 async function addToDom(processedData) {
